@@ -146,8 +146,7 @@ useEffect(() => {
   // }
   
   // ! Above code isn't tested
-  render() {
-    return (
+  return (
     <div>
       <h3>Create New Exercise Log</h3>
       <form onSubmit={this.onSubmit}>
@@ -201,6 +200,4 @@ useEffect(() => {
         </div>
       </form>
     </div>
-    )
-  }
-}
+  )
