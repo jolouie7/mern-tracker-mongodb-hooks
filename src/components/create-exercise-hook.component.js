@@ -63,30 +63,54 @@ useEffect(() => {
   //     })
   // }
 
-  onChangeUsername(e) {
-    this.setState({
+  // ! I think this is how you make a istatnce method
+  const onChangeUsername = (e) => {
+    setUsername({
       username: e.target.value
     })
   }
-
-  onChangeDescription(e) {
-    this.setState({
+  const onChangeDescription = (e) => {
+    setDescription({
       description: e.target.value
     })
   }
-
-  onChangeDuration(e) {
-    this.setState({
+  const onChangeDuration = (e) => {
+    setDuration({
       duration: e.target.value
     })
   }
-
-  onChangeDate(date) {
-    this.setState({
+  const onChangeDate = (date) => {
+    setDate({
       date: date
     })
   }
 
+  // * old class component
+  // onChangeUsername(e) {
+  //   this.setState({
+  //     username: e.target.value
+  //   })
+  // }
+
+  // onChangeDescription(e) {
+  //   this.setState({
+  //     description: e.target.value
+  //   })
+  // }
+
+  // onChangeDuration(e) {
+  //   this.setState({
+  //     duration: e.target.value
+  //   })
+  // }
+
+  // onChangeDate(date) {
+  //   this.setState({
+  //     date: date
+  //   })
+  // }
+
+  // ! Above code isn't tested
   onSubmit(e) {
     e.preventDefault();
 
