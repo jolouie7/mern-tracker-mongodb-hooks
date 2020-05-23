@@ -110,15 +110,13 @@ useEffect(() => {
   //   })
   // }
 
-  // ! Above code isn't tested
-  onSubmit(e) {
+  const onSubmit = (e) => {
     e.preventDefault();
-
     const exercise = {
-      username: this.state.username,
-      description: this.state.description,
-      duration: this.state.duration,
-      date: this.state.date
+      username: username,
+      description: description,
+      duration: duration,
+      date: date
     }
 
     console.log(exercise);
@@ -129,6 +127,25 @@ useEffect(() => {
     window.location = '/';
   }
 
+  // onSubmit(e) {
+  //   e.preventDefault();
+
+  //   const exercise = {
+  //     username: this.state.username,
+  //     description: this.state.description,
+  //     duration: this.state.duration,
+  //     date: this.state.date
+  //   }
+
+  //   console.log(exercise);
+
+  //   axios.post('http://localhost:5000/exercises/add', exercise)
+  //     .then(res => console.log(res.data));
+
+  //   window.location = '/';
+  // }
+  
+  // ! Above code isn't tested
   render() {
     return (
     <div>
