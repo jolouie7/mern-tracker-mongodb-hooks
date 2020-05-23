@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
@@ -31,21 +31,37 @@ export default function CreateExercise() {
 //     }
 //   }
 
-  componentDidMount() {
-    axios.get('http://localhost:5000/users/')
-      .then(response => {
-        if (response.data.length > 0) {
-          this.setState({
-            users: response.data.map(user => user.username),
-            username: response.data[0].username
-          })
-        }
+// ! I think this should work
+useEffect(() => {
+  axios.get('http://localhost:5000/users/')
+  .then(response => {
+    if (response.data.length > 0) {
+      this.setState({
+        users: response.data.map(user => user.username),
+        username: response.data[0].username
       })
-      .catch((error) => {
-        console.log(error);
-      })
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+})
 
-  }
+// * Old class component code
+  // componentDidMount() {
+  //   axios.get('http://localhost:5000/users/')
+  //     .then(response => {
+  //       if (response.data.length > 0) {
+  //         this.setState({
+  //           users: response.data.map(user => user.username),
+  //           username: response.data[0].username
+  //         })
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     })
+  // }
 
   onChangeUsername(e) {
     this.setState({
